@@ -7,11 +7,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<EF_DataContext>(opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL_Connetion")));
+builder.Services.AddDbContext<EF_DataContext>(
+    opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSQL_Connection")));
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

@@ -4,18 +4,22 @@ using PostgresSQL.API.Model;
 using PostgresSQL.API.Repository;
 using PostgresSQL.API.Handler;
 
+
 namespace PostgresSQL.API.Controllers
 {
+    [ApiController]
+    [Route("api")]
     public class ShoppingApiController : ControllerBase
     {
+
         private readonly ShoppingImpl _db;
         public ShoppingApiController(EF_DataContext eF_DataContext)
         {
             _db = new ShoppingImpl(eF_DataContext);
         }
 
-        [HttpGet]
-        [Route("api/[controller]/GetProducts")]
+        [HttpGet("products")]
+
         public IActionResult Get()
         {
 
@@ -36,8 +40,7 @@ namespace PostgresSQL.API.Controllers
 
         }
 
-        [HttpGet]
-        [Route("api/[controller]/GetProductById/{id}")]
+        [HttpGet("products/{id}")]
         public IActionResult Get(Guid id)
         {
             ResponseType type = ResponseType.Success;
@@ -57,8 +60,7 @@ namespace PostgresSQL.API.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("api/[controller]/SaveOrder")]
+        [HttpPost("products")]
         public IActionResult Post([FromBody] Order model)
         {
             ResponseType type = ResponseType.Success;
@@ -74,7 +76,7 @@ namespace PostgresSQL.API.Controllers
         }
 
         [HttpPut]
-        [Route("api/[controller]/UpdateOrder")]
+        [Route("products")]
         public IActionResult Put([FromBody] Order model)
         {
             try
@@ -90,7 +92,7 @@ namespace PostgresSQL.API.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]/DeleteOrder/{id}")]
+        [Route("products/{id}")]
         public IActionResult Delete(Guid id)
         {
             try

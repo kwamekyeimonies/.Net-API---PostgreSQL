@@ -28,7 +28,7 @@ namespace PostgresSQL.API.Repository
             return response;
         }
 
-        public Product GetProductByID(int id)
+        public Product GetProductByID(Guid id)
         {
             Product response = new Product();
             var row = _context.Products.Where(db => db.id.Equals(id)).FirstOrDefault();

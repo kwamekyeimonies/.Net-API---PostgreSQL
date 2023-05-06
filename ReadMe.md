@@ -1,7 +1,7 @@
 Always Initialize your database and after that update using these commands.
 
 --Ubuntu Users
-Firstly install dotnet-ef
+Firstly install dotnet-ef globally
 
 --> dotnet tool install --global dotnet-ef
 

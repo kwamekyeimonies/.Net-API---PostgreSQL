@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PostgresSQL.API.Model;
-using Npgsql.EntityFrameworkCore.PostgreSQL;
+
 
 namespace PostgresSQL.API.DBContext
 {

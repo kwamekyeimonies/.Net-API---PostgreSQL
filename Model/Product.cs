@@ -20,6 +20,12 @@ namespace PostgresSQL.API.Model
             set;
         }
 
+        public string? brand
+        {
+            get;
+            set;
+        }
+
         public string? size
         {
             get;
